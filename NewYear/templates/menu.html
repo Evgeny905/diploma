@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Главная страница{% endblock %}</title>
+    <link rel="stylesheetet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body>
+    <pagename>
+        {% block pagename %}
+        <h1>С Наступающим 2025 Годом!!!</h1>
+        {% endblock %}
+    </pagename>
+
+    <menu>
+        {% block menu %}
+        <a href="/#">Главная страница</a><br>
+        <a href="/predictions">Узнать предсказание на 2025 Год</a><br>
+        <a href="/viewing">Просмотр всех предсказаний</a>
+        {% endblock %}
+    </menu>
+
+    <content>
+        {% block content %}
+        {% for prediction in Predictions %}
+            <ul>
+                <li>{{prediction.title}}.<br>Описание: {{prediction.content}}</li>
+            </ul>
+        {% endfor %}
+        {% endblock %}
+    </content>
+</body>
+</html>
