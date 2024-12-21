@@ -1,0 +1,19 @@
+{% extends "menu.html" %}
+
+{% block title %}Предсказание{% endblock %}
+{% block pagename %}
+    {{block.super}}
+{% endblock %}
+{% block menu %}
+    {{block.super}}
+{% endblock %}
+{% block figure %}
+    {{block.super}}
+{% endblock %}
+{% block grafic %}
+    {{block.super}}
+{% endblock %}
+{% block content %}
+    <h2 style="color: #B22222"> {{Prediction.title}}<br> </h2>
+    <h2 style="color: #B22222"> {{Prediction.content}} </h2>
+{% endblock %}

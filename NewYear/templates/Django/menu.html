@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Главная страница{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="pagename">
+        {% block pagename %}
+        <h1 style="color: #FFD700">С НАСТУПАЮЩИМ 2025 ГОДОМ!!!</h1>
+        {% endblock %}
+    </div>
+    <menu>
+        {% block menu %}
+        <h2>
+            <a href="/#" style="color: #B22222">Главная страница</a><br>
+            <a href="/predictions" style="color: #B22222">Узнать предсказание на 2025 Год</a><br>
+            <a href="/viewing" style="color: #B22222">Просмотр всех предсказаний</a>
+        </h2>
+        {% endblock %}
+    </menu>
+    <figure>
+        {% block figure %}
+        <audio autoplay loop>
+            <source src="music.mp3" type="audio/mpeg">
+        </audio>
+        {% endblock %}
+    </figure>
+    <grafic>
+        {% block grafic %}
+        <img src = "/static/елка.gif"><img src = "/static/шарик.gif"><img src = "/static/мороз.jpg">
+        {% endblock %}
+    </grafic>
+    <content>
+        {% block content %}
+        {% for prediction in Predictions %}
+            <ul>
+                <h2 style="color: #B22222"><li>{{prediction.title}}.<br>Описание: {{prediction.content}}</li></h2>
+            </ul>
+        {% endfor %}
+        {% endblock %}
+    </content>
+</body>
+</html>

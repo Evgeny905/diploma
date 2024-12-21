@@ -16,8 +16,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from predictions.views import Main_page, Predictions, Viewing, Prediction_random
-from django.conf import settings
-from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,4 +23,4 @@ urlpatterns = [
     path('predictions/', Predictions),
     path('viewing/', Viewing),
     path('prediction/', Prediction_random),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]
