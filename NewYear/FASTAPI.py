@@ -20,7 +20,6 @@ async def get_db():
     finally:
         db.close()
 templates = Jinja2Templates(directory='templates/FastAPI_Flask')
-
 class Base(DeclarativeBase):
     pass
 class Prediction_Base(Base):
