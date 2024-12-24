@@ -1,0 +1,16 @@
+h1 {
+text-align: center;
+}
+.pagename {
+background-color: #B22222;
+}
+img {
+width: 500px;
+height: 500px;
+}
+.Кнопка {
+width: 200px;
+height: 100px;
+background-color: #FFD700;
+border-color: #B22222;
+}
